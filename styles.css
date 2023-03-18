@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(222, 232, 236);
+  }
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.top {
+    border: 1px solid red;
+    height: 100px;
+
+    display: flex;
+    padding: 20px 60px;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-left: 10px solid rgb(255, 166, 0);
+    border-radius: 8px;
+    height: 180px;
+    text-align: left;
+    padding: 20px 65px 35px 20px;
+    color: rgb(109, 109, 109);
+    position: relative;
+}
