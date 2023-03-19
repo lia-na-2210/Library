@@ -22,6 +22,7 @@ body {
 
     display: flex;
     padding: 20px 60px;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -30,6 +31,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .card {
@@ -41,4 +43,55 @@ body {
     padding: 20px 65px 35px 20px;
     color: rgb(109, 109, 109);
     position: relative;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    background-color: white;
+    box-shadow: 0px 5px #8888883a;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+}
+
+button {
+    padding: 14px 18px;
+    background-color: rgb(126, 53, 221);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 25px 30px;
+}
+
+.log-in {
+    margin: 25px 30px;
+}
+
+a{
+    color: orangered;
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 3px;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 3px 3px #2675eb79;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+    box-shadow: none;
+    border: 1px solid red;
 }

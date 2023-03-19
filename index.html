@@ -18,59 +18,64 @@
                 <div id="profile-name">Christopher Bang</div>
             </div>
         </div>
+        <div class="form-area" id="form-area" style="display:none">
+            <h1>Add a new book</h1>
+            <form>
+                <section>
+                    <p>
+                        <label for="title_book">
+                            <span>Title*: </span>
+                        </label>
+                        <input type="text" required id="title_book" name="title" placeholder=" ">
+                    </p>
+                    <p>
+                        <label for="author_book">
+                            <span>Author*: </span>
+                        </label>
+                        <input type="text" required id="author_book" name="author" placeholder=" ">
+                    </p>
+                    <p>
+                        <label for="pages_book">
+                            <span>Pages: </span>
+                        </label>
+                        <input type="number" required id="pages_book" name="pages" placeholder=" ">
+                    </p>
+                    <p>
+                        <label for="check">Have you read it yet?</label>
+                        <select name="check" id="YN">
+                            <option value="yes">Yes</option>
+                            <option value="no" selected>No</option>
+                        </select>
+                    </p>
+                </section>
+                <div class="btn" id="btn">
+                    <button type="submit">Add to library</button>
+                </div>
+            </form>
+        </div>
         <div class="grid">
             <div class="card">
                 <h3>Title</h3>
                 <h4>Author</h4>
                 <p>Pages</p>
-                <div id="read-check">
-                    <label for="readchecking">Have you read it yet?</label>
-                    <select name="readchecking" id="YN">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
             </div>
             <div class="card">
                 <h3>Title</h3>
                 <h4>Author</h4>
                 <p>Pages</p>
-                <div id="read-check">
-                    <label for="readchecking">Have you read it yet?</label>
-                    <select name="readchecking" id="YN">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
             </div>
             <div class="card">
                 <h3>Title</h3>
                 <h4>Author</h4>
                 <p>Pages</p>
-                <div id="read-check">
-                    <label for="readchecking">Have you read it yet?</label>
-                    <select name="readchecking" id="YN">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
             </div>
             <div class="card">
                 <h3>Title</h3>
                 <h4>Author</h4>
                 <p>Pages</p>
-                <div id="read-check">
-                    <label for="readchecking">Have you read it yet?</label>
-                    <select name="readchecking" id="YN">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
             </div>
         </div>
     </div>
-    <p>What's the title?</p>
-    <input type="text" id="title-inp">
     <script src="main.js"></script>
 </body>
 </html>
