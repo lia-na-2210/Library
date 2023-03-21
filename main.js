@@ -58,6 +58,9 @@ function newCard(element) {
   const newAuthor = element.author;
   const newPages = element.pages;
   const newCheck = element.check;
+  console.log(newCheck);
+  const check = readCheck(newCheck);
+
   const grid = document.getElementById('grid');
   const div = document.createElement('div');
   div.className = 'card';
@@ -65,6 +68,7 @@ function newCard(element) {
   <h3>${newTitle}</h3>
   <h4>${newAuthor}</h4>
   <p>${newPages} pages</p>
+  <p>${check}</p>
   `;
   grid.appendChild(div);
 }
@@ -76,7 +80,6 @@ function createCard() {
     const newAuthor = element.author;
     const newPages = element.pages;
     const newCheck = element.check;
-    console.log(newCheck);
 
     const check = readCheck(newCheck);
     const div = document.createElement('div');
@@ -92,7 +95,7 @@ function createCard() {
 }
 
 function readCheck(choice) {
-  if (choice === 'Yes') {
+  if (choice === 'Yes' || choice === 'yes') {
     return ('I have read this book ✔️');
   }
   return ("I haven't read this yet ❌");
