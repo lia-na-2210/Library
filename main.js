@@ -1,29 +1,34 @@
 const addButton = document.getElementById('add-book');
 const form = document.querySelector('form');
+let baseID = 3;
 const myLibrary = [
   {
     title: 'Artemis Fowl',
     author: 'Eoin Colfer',
     pages: '288',
     check: 'Yes',
+    id: 0,
   },
   {
     title: '1984',
     author: 'George Orwell',
     pages: '206',
     check: 'Yes',
+    id: 1,
   },
   {
     title: 'Servant of the Bones',
     author: 'Anne Rice',
     pages: '387',
     check: 'No',
+    id: 2,
   },
   {
     title: 'Harry Potter and the Prisioner of Azkaban',
     author: 'J. K. Rowling',
     pages: '435',
     check: 'No',
+    id: 3,
   },
 ];
 
@@ -45,8 +50,12 @@ function Addelement(title, author, pages, check) {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  baseID += 1;
+  console.log(baseID);
   const fd = new FormData(form);
   const element = Object.fromEntries(fd);
+  element.id = baseID;
+  console.log(element);
   myLibrary.push(element);
   newCard(element);
   form.reset();
@@ -54,21 +63,15 @@ form.addEventListener('submit', (e) => {
 });
 
 function newCard(element) {
-  const newTitle = element.title;
-  const newAuthor = element.author;
-  const newPages = element.pages;
-  const newCheck = element.check;
-  console.log(newCheck);
-  const check = readCheck(newCheck);
-
   const grid = document.getElementById('grid');
   const div = document.createElement('div');
   div.className = 'card';
   div.innerHTML = `
-  <h3>${newTitle}</h3>
-  <h4>${newAuthor}</h4>
-  <p>${newPages} pages</p>
-  <p>${check}</p>
+  <h3>${element.title}</h3>
+  <h4>${element.author}</h4>
+  <p>${element.pages} pages</p>
+  <p>${readCheck(element.check)}</p>
+  <button id='del-btn' onclick='delCard(${element.id})'>X</button>
   `;
   grid.appendChild(div);
 }
@@ -76,19 +79,14 @@ function newCard(element) {
 function createCard() {
   const grid = document.getElementById('grid');
   myLibrary.forEach((element) => {
-    const newTitle = element.title;
-    const newAuthor = element.author;
-    const newPages = element.pages;
-    const newCheck = element.check;
-
-    const check = readCheck(newCheck);
     const div = document.createElement('div');
     div.className = 'card';
     div.innerHTML = `
-    <h3>${newTitle}</h3>
-    <h4>${newAuthor}</h4>
-    <p>${newPages} pages</p>
-    <p>${check}</p>
+    <h3>${element.title}</h3>
+    <h4>${element.author}</h4>
+    <p>${element.pages} pages</p>
+    <p>${readCheck(element.check)}</p>
+    <button id='del-btn' onclick='delCard(${element.id})'>X</button>
     `;
     grid.appendChild(div);
   });
@@ -99,6 +97,16 @@ function readCheck(choice) {
     return ('I have read this book ✔️');
   }
   return ("I haven't read this yet ❌");
+}
+
+function delCard(id) {
+  const index = myLibrary.findIndex((book) => book.id === id);
+  console.log(index);
+  myLibrary.splice(index, 1);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = ' ';
+  console.log(myLibrary);
+  createCard();
 }
 
 window.onload = createCard();
