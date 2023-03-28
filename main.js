@@ -41,12 +41,12 @@ addButton.addEventListener('click', () => {
   }
 });
 
-function Addelement(title, author, pages, check) {
+/* function Addelement(title, author, pages, check) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.check = check;
-}
+} */
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -63,6 +63,7 @@ form.addEventListener('submit', (e) => {
 });
 
 function newCard(element) {
+  const book = element;
   const grid = document.getElementById('grid');
   const div = document.createElement('div');
   div.className = 'card';
@@ -74,21 +75,21 @@ function newCard(element) {
   <button id='del-btn' onclick='delCard(${element.id})'>X</button>
   `;
   grid.appendChild(div);
+
+  if (element.check === 'No' || element.check === 'no') {
+    const btn = document.createElement('button');
+    btn.id = 'read-btn';
+    btn.textContent = 'Done!';
+    btn.addEventListener('click', () => {
+      readChange(book);
+    });
+    div.appendChild(btn);
+  }
 }
 
 function createCard() {
-  const grid = document.getElementById('grid');
   myLibrary.forEach((element) => {
-    const div = document.createElement('div');
-    div.className = 'card';
-    div.innerHTML = `
-    <h3>${element.title}</h3>
-    <h4>${element.author}</h4>
-    <p>${element.pages} pages</p>
-    <p>${readCheck(element.check)}</p>
-    <button id='del-btn' onclick='delCard(${element.id})'>X</button>
-    `;
-    grid.appendChild(div);
+    newCard(element);
   });
 }
 
@@ -97,6 +98,10 @@ function readCheck(choice) {
     return ('I have read this book ✔️');
   }
   return ("I haven't read this yet ❌");
+}
+
+function readChange(book) {
+  console.log(book);
 }
 
 function delCard(id) {
