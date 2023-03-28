@@ -101,7 +101,10 @@ function readCheck(choice) {
 }
 
 function readChange(book) {
-  console.log(book);
+  book.check = 'yes';
+  const grid = document.getElementById('grid');
+  grid.innerHTML = ' ';
+  createCard();
 }
 
 function delCard(id) {

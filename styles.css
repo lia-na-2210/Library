@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: rgb(222, 232, 236);
+    background: rgb(92, 17, 17);
   }
 
 .container {
@@ -17,7 +17,7 @@ body {
 }
 
 .top {
-    border: 1px solid red;
+    background: rgb(224, 207, 175);
     height: 100px;
 
     display: flex;
@@ -63,7 +63,7 @@ label {
 
 button {
     padding: 14px 18px;
-    background-color: rgb(126, 53, 221);
+    background-color: rgb(76, 116, 143);
     color: white;
     border: none;
     border-radius: 5px;
