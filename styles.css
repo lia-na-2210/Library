@@ -6,7 +6,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: rgb(92, 17, 17);
+    background: rgb(224, 207, 175);
+    font-family: 'Work Sans', sans-serif;
   }
 
 .container {
@@ -17,13 +18,53 @@ body {
 }
 
 .top {
-    background: rgb(224, 207, 175);
+    background:  rgb(92, 17, 17);
     height: 100px;
+    color: white;
 
     display: flex;
     padding: 20px 60px;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 5px 2px #888888b2;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    filter: invert(1);
+}
+
+#add-book img {
+    height: 30px;
+    width: auto;
+    filter: invert(1);
+
+}
+
+#add-book {
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.user img {
+    height: 25px;
+    width: auto;
+    filter: invert(1);
 }
 
 .grid {
@@ -32,29 +73,36 @@ body {
     gap: 30px;
     justify-content: center;
     margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .card {
     background-color: white;
-    border-left: 10px solid rgb(255, 166, 0);
+    border-left: 10px solid rgb(214, 155, 46);
     border-radius: 8px;
-    height: 180px;
+    height: 200px;
     text-align: left;
-    padding: 20px 65px 35px 20px;
+    padding: 15px 35px 35px 20px;
     color: rgb(109, 109, 109);
     position: relative;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.card h3 {
+    color: rgb(22, 10, 13);
+}
 
+.form-area {
     background-color: white;
-    box-shadow: 0px 5px #8888883a;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
 }
 
 label {

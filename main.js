@@ -59,7 +59,7 @@ form.addEventListener('submit', (e) => {
   myLibrary.push(element);
   newCard(element);
   form.reset();
-  console.log(myLibrary);
+
 });
 
 function newCard(element) {
