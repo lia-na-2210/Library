@@ -86,10 +86,22 @@ body {
     padding: 15px 35px 35px 20px;
     color: rgb(109, 109, 109);
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.card * {
+    margin: 0;
 }
 
 .card h3 {
     color: rgb(22, 10, 13);
+}
+
+#del-btn {
+    display: inline;
 }
 
 .form-area {
