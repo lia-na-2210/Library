@@ -104,6 +104,10 @@ body {
     display: inline;
 }
 
+.button-area {
+    border: 1px solid red;
+}
+
 .form-area {
     background-color: white;
     display: flex;

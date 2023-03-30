@@ -1,6 +1,11 @@
 const addButton = document.getElementById('add-book');
+const delButton = document.getElementById('del-btn');
+const readButton = document.getElementById('read-btn');
+const card = document.getElementById('card');
 const form = document.querySelector('form');
+
 let baseID = 3;
+
 const myLibrary = [
   {
     title: 'Artemis Fowl',
@@ -58,8 +63,8 @@ form.addEventListener('submit', (e) => {
   console.log(element);
   myLibrary.push(element);
   newCard(element);
+  clones(element);
   form.reset();
-
 });
 
 function newCard(element) {
@@ -72,9 +77,14 @@ function newCard(element) {
   <h4>${element.author}</h4>
   <p>${element.pages} pages</p>
   <p>${readCheck(element.check)}</p>
-  <button id='del-btn' onclick='delCard(${element.id})'>X</button>
   `;
   grid.appendChild(div);
+  const buttons = document.createElement('div');
+  buttons.className = 'button-area';
+  buttons.innerHTML = `
+  <button id='del-btn' onclick='delCard(${element.id})'>X</button>
+  `;
+  div.appendChild(buttons);
 
   if (element.check === 'No' || element.check === 'no') {
     const btn = document.createElement('button');
@@ -83,7 +93,7 @@ function newCard(element) {
     btn.addEventListener('click', () => {
       readChange(book);
     });
-    div.appendChild(btn);
+    buttons.appendChild(btn);
   }
 }
 
@@ -118,3 +128,19 @@ function delCard(id) {
 }
 
 window.onload = createCard();
+
+function clones(element) {
+  const grid = document.getElementById('grid');
+  const newClone = card.cloneNode(true);
+  newClone.style.display = 'inline';
+  newClone.className = 'card';
+  const title = newClone.childNodes[1];
+  title.textContent = element.title;
+  const author = newClone.childNodes[2];
+  author.textContent = element.author;
+  const pages = newClone.childNodes[3];
+  pages.textContent = element.pages;
+  const read = newClone.childNodes[4];
+  read.innerHTML = readCheck(element.check);
+  grid.appendChild(newClone);
+}
