@@ -26,7 +26,11 @@ body {
     padding: 20px 60px;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 5px 2px #888888b2;
+    box-shadow: rgba(0, 0, 0, 0.295) 0px 12px 10px -5px;
+}
+
+.user div {
+    cursor: pointer;
 }
 
 .logo {
@@ -113,7 +117,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid red;
+    gap: 5px;
 }
 
 .section {
@@ -122,7 +126,9 @@ body {
 }
 
 label {
-    display: block;
+    display: inline-block;
+    width: 200px;
+    text-align: right;
 }
 
 button {
@@ -134,28 +140,31 @@ button {
     font-size: 15px;
     cursor: pointer;
     margin: 25px 30px;
+    transition: all 500ms ease;
 }
 
-.log-in {
-    margin: 25px 30px;
-}
-
-a{
-    color: orangered;
-    text-decoration: none;
+button:active {
+    background-color: rgb(124, 163, 189);
+    transform: scale(0.90);
 }
 
 input {
     border: 1px solid rgb(158, 158, 158);
-    border-radius: 3px;
+    border-radius: 6px;
     outline: none;
+    padding: 5px 10px;
 }
 
 input:focus {
-    box-shadow: 3px 3px #2675eb79;
+    box-shadow: 3px 3px #77777779;
 }
 
 input:invalid:not(:focus):not(:placeholder-shown) {
     box-shadow: none;
-    border: 1px solid red;
+    border: 1px solid rgb(155, 15, 15);
+}
+
+select {
+    padding: 10px 5px;
+    border-radius: 6px;
 }
