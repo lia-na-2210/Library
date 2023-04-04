@@ -1,7 +1,4 @@
 const addButton = document.getElementById('add-book');
-const delButton = document.getElementById('del-btn');
-const readButton = document.getElementById('read-btn');
-const card = document.getElementById('card');
 const form = document.querySelector('form');
 
 let baseID = 3;
@@ -46,13 +43,6 @@ addButton.addEventListener('click', () => {
   }
 });
 
-/* function Addelement(title, author, pages, check) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.check = check;
-} */
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   baseID += 1;
@@ -63,7 +53,6 @@ form.addEventListener('submit', (e) => {
   console.log(element);
   myLibrary.push(element);
   newCard(element);
-  clones(element);
   form.reset();
 });
 
@@ -133,7 +122,7 @@ function delCard(id) {
 
 window.onload = createCard();
 
-function clones(element) {
+/* function clones(element) {
   const grid = document.getElementById('grid');
   const newClone = card.cloneNode(true);
   newClone.style.display = 'inline';
@@ -147,4 +136,4 @@ function clones(element) {
   const read = newClone.childNodes[4];
   read.innerHTML = readCheck(element.check);
   grid.appendChild(newClone);
-}
+} */
