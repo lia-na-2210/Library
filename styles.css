@@ -73,7 +73,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     justify-content: center;
     margin-top: 30px;
@@ -85,7 +85,6 @@ body {
     background-color: white;
     border-left: 10px solid rgb(214, 155, 46);
     border-radius: 8px;
-    height: 200px;
     text-align: left;
     padding: 15px 35px 35px 20px;
     color: rgb(109, 109, 109);
@@ -109,7 +108,10 @@ body {
 }
 
 .button-area {
-    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 20px;
 }
 
 .form-area {

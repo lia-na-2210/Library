@@ -81,10 +81,14 @@ function newCard(element) {
   grid.appendChild(div);
   const buttons = document.createElement('div');
   buttons.className = 'button-area';
-  buttons.innerHTML = `
+  div.appendChild(buttons);
+
+  const delButton = document.createElement('div');
+  delButton.className = 'del-btn';
+  delButton.innerHTML = `
   <button id='del-btn' onclick='delCard(${element.id})'>X</button>
   `;
-  div.appendChild(buttons);
+  buttons.appendChild(delButton);
 
   if (element.check === 'No' || element.check === 'no') {
     const btn = document.createElement('button');
@@ -93,7 +97,7 @@ function newCard(element) {
     btn.addEventListener('click', () => {
       readChange(book);
     });
-    buttons.appendChild(btn);
+    buttons.insertBefore(btn, delButton);
   }
 }
 
