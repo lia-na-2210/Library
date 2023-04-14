@@ -73,16 +73,16 @@ function newCard(element) {
   div.appendChild(buttons);
 
   const delButton = document.createElement('div');
-  delButton.className = 'del-btn';
+  delButton.id = 'del-btn';
   delButton.innerHTML = `
-  <button id='del-btn' onclick='delCard(${element.id})'>X</button>
+  <button id='del-btn' onclick='delCard(${element.id})'><img src="vectors/bookmark-remove.svg" alt="Delete book"></button>
   `;
   buttons.appendChild(delButton);
 
   if (element.check === 'No' || element.check === 'no') {
     const btn = document.createElement('button');
     btn.id = 'read-btn';
-    btn.textContent = 'Done!';
+    btn.innerHTML = '<img src="vectors/bookmark-check.svg" alt="Done reading">';
     btn.addEventListener('click', () => {
       readChange(book);
     });

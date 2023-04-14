@@ -89,9 +89,10 @@ body {
     border-left: 10px solid rgb(214, 155, 46);
     border-radius: 8px;
     text-align: left;
-    padding: 15px 35px 35px 20px;
+    padding: 15px 20px;
     color: rgb(109, 109, 109);
     position: relative;
+    height: 200px;
 
     display: flex;
     flex-direction: column;
@@ -106,14 +107,28 @@ body {
     color: rgb(22, 10, 13);
 }
 
-#del-btn {
-    display: inline;
+#del-btn img,
+#read-btn img {
+    height: 25px;
+    width: auto;
+    filter: invert(1);
+}
+
+.card button {
+    font-size: 15px;
+    background-color: rgb(76, 116, 143);
+    padding: 5px;
+    border-radius: 8px;
+    height: 40px;
 }
 
 .button-area {
     display: flex;
     flex-direction: row;
     justify-content: right;
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
     gap: 20px;
 }
 
